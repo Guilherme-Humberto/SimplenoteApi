@@ -1,4 +1,4 @@
-import { connect, Promise } from 'mongoose'
+import { connect } from 'mongoose'
 
 export const connetion = connect(process.env.DB_CONNECTION, {
     useNewUrlParser: true,
