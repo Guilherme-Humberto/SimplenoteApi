@@ -42,6 +42,11 @@ export default {
 
     async favoriteupdate (req: Request, res: Response) {
         await Note.findByIdAndUpdate(req.params.id, req.body, { new: true })
-    }
+    },
+
+    async noteUpdate (req: Request, res: Response) {
+        const note = await Note.findByIdAndUpdate(req.params.id, req.body, { new: true })
+        return res.json(note)
+    }, 
 
 }

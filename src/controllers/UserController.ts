@@ -34,7 +34,7 @@ export default {
             const user = await User.findOne({ email }).select("+password")
 
             if(!user) {
-                return res.status(400).send({ error: "Usuário não encontrado" })
+                console.log("Usuário não encontrado")
             }
             
             if(!await bcrypt.compare(password, user.password)) {
