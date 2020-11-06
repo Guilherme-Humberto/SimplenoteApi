@@ -4,7 +4,8 @@ import cors from 'cors'
 import 'dotenv/config'
 
 import { router, routerNotes } from './routes/router'
-import { connetion } from './database/index'
+import'./database/index'
+
 class App {
     public express: express.Application
 
@@ -19,7 +20,6 @@ class App {
         this.express.use(cors())
         this.express.use(express.json())
         this.express.use(router, routerNotes)
-        connetion
     }
 }
 
