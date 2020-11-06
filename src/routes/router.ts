@@ -7,12 +7,13 @@ import authMiddleWare from '../middleware/index'
 
 routerNotes.use(authMiddleWare)
 
-routerNotes.get("/notes/:user_id", controllerNote.list)
-routerNotes.get("/notesId/:id", controllerNote.getByID)
-routerNotes.get("/notes/:id", controllerNote.listfavorites)
-routerNotes.post("/notes/:user_id", controllerNote.create)
-routerNotes.patch("/notes/:id", controllerNote.favoriteupdate)
-routerNotes.delete("/notes/:id", controllerNote.delete)
+router.get("/notes/:user_id", controllerNote.list)
+router.get("/notesId/:id", controllerNote.getByID)
+router.get("/notes/:id", controllerNote.listfavorites)
+router.post("/notes/:user_id", controllerNote.create)
+router.patch("/notes/:id", controllerNote.favoriteupdate)
+router.put("/updateNote/:id", controllerNote.noteUpdate)
+router.delete("/notes/:id", controllerNote.delete)
 
 router.post("/register", controllerUser.register)
 router.post("/auth", controllerUser.authenticated)
