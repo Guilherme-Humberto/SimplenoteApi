@@ -3,12 +3,14 @@ import bcrypt from 'bcryptjs'
 
 interface Props extends Document {
     name: string,
+    surname: String,
     email: string,
     password: string,
 }
 
 const UserSchema = new Schema({
     name: { type: String, required: true },
+    surname: { type: String, required: true },
     email: { type: String, required: true },
     password: { type: String, required: true, select: false },
     notes: {
